@@ -4,7 +4,7 @@
 
 This project analyzes U.S. domestic airline flight data to understand the primary drivers of flight delays and how delay behavior varies across **airlines**, **airports**, and their **interaction**.
 
-Rather than focusing solely on rankings, the goal is to understand where delay variability originates and why certain flights experience severe disruptions while most do not.
+Rather than focusing solely on rankings, the goal is to understand *where delay variability originates* and why certain flights experience severe disruptions while most do not.
 
 ## Dataset
 
@@ -23,7 +23,7 @@ The dataset provides flight‑level records including carrier, origin airport, t
 * Git/GitHub - version control and reproducibility
 * Data Visualization - planned (charts and dashboards)
 
-# Analytical Approach
+## Analytical Approach
 
 ### 1\. Exploratory Data Analysis (EDA)
 
@@ -35,24 +35,9 @@ Key findings from EDA:
 
 
 
-* Flight delays follow a **right‑skewed (long‑tail) distribution**
-
-
-
-* Median delay = 0 minutes
-* Worst 1% of flights exceed ~3 hours of delay
-
-
-
-
-
-Origin airport effects explain more delay variability than airline choice alone
-
-Airline performance is context‑dependent and varies significantly by airport
-
-
-
-These findings guided the structure of the SQL modeling phase.
+* Flight delays follow a **right‑skewed (long‑tail) distribution** --> the median delay was 0 minutes, while the worst 1% of flights exceeded ~3 hours of delay
+* Origin airport effects **explain more delay variability** than airline choice alone
+* Airline performance is **context‑dependent** and varies significantly by airport
 
 
 
@@ -64,27 +49,13 @@ Key SQL views include:
 
 
 
-Overall delay KPIs (baseline delay rate and severity)
-
-Airline‑level performance (with minimum flight thresholds)
-
-Origin airport performance
-
-Airline × airport interaction analysis
-
-Decomposition view separating:
+* **Overall delay KPIs** (baseline delay rate and severity)
+* **Airline‑level performance** (with minimum flight thresholds)
+* **Origin airport performance**
+* **Airline × airport interaction analysis**
+* **Decomposition view** (airline baseline performance x airport baseline delay environment x interaction effects between the two)
 
 
-
-airline baseline performance
-
-airport baseline delay environment
-
-interaction effects between the two
-
-
-
-This structure ensures that insights are repeatable and ready for visualization.
 
 ## Key Questions Addressed So Far
 
