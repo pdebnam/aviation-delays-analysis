@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project analyzes U.S. domestic airline flight data to understand the primary drivers of flight delays and how delay behavior varies across **airlines**, **airports**, and their **interaction**.
+This project analyzes U.S. domestic airline flight data to answer a question that impacts consumer travel and airport business operations: What are the primary drivers of flight delays, and how, if at all, does that delay behavior vary across **airlines**, **airports**, and the **interactions** between the two?
 
 Rather than focusing solely on rankings, the goal is to understand *where delay variability originates* and why certain flights experience severe disruptions while most do not.
 
@@ -27,23 +27,27 @@ The dataset provides flight‑level records including carrier, origin airport, t
 
 ### 1\. Exploratory Data Analysis (EDA)
 
-EDA was used to understand baseline delay behavior and identify where meaningful variance exists.
+EDA was used to understand baseline delay behavior and identify where meaningful variance exists. The analysis was concentrated over 14 distinct airline carriers and 346 distinct origin airports.
 
 
 
-Key findings from EDA:
+Key findings \& insights from EDA:
 
 
 
-* Flight delays follow a **right‑skewed (long‑tail) distribution** --> the median delay was 0 minutes, while the worst 1% of flights exceeded ~3 hours of delay
-* Origin airport effects **explain more delay variability** than airline choice alone
-* Airline performance is **context‑dependent** and varies significantly by airport
+* Just a **little over 20%** of total flights were delayed, suggesting that stories of constant delays are overblown
+* Flight delays follow a **right‑skewed (long‑tail) distribution** {p90 = 40 mins, p95 = 75, p99 = 192} --> so while rare, severe delays dominate averages
+* Delay variance between airline carriers was **moderate (~9% spread)** --> airline operations matter, but are not entirely influential to delay behavior
+* Delay variance between origin carriers was more prominent (~21% spread) --> this suggests that origin airport effects **explain more delay variability** than airline choice alone
+* Composition analysis (airline x airport) showed that airline performance is **context‑dependent** and varies significantly by airport --> combinations provide more explanation rather than each single factor alone
 
 
 
 ### 2\. SQL Modeling \& Analytical Views
 
-EDA findings were formalized into a reproducible SQL analytics layer built on top of a cleaned fact table.
+EDA findings were formalized into reproducible SQL views built on top of a cleaned fact table.
+
+
 
 Key SQL views include:
 
@@ -71,35 +75,13 @@ Project Structure
 
 aviation-delays-analysis/
 
-├── data/
+├── data \[raw/processed CSVs for data analysis]
 
-│   └── processed/
+├── python \[Python scripts for EDA, loading to SQL, etc.]
 
-│       └── flights\_oct\_2025\_processed.csv
+├── sql \[SQL views from EDA]
 
-├── python/
-
-│   └── load\_to\_sqlite.py
-
-│   └── make\_delay\_distribution\_plot.py
-
-├── sql/
-
-│   ├── 01\_schema.sql
-
-│   ├── 02\_load\_notes.md
-
-│   ├── 03\_core\_views.sql
-
-│   ├── 04\_ranked\_views.sql
-
-│   ├── 05\_decomposition.sql
-
-│   └── 06\_index\_views.sql
-
-├── viz/
-
-│   └── delay\_distribution\_oct\_2025.png
+├── viz \[Visualization artifacts (charts, dashboards, etc.)
 
 ├── README.md
 
