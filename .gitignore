@@ -1,0 +1,10 @@
+# Runtime database (recreated from CSV)
+data/flights.db
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# OS junk
+.DS_Store
+Thumbs.db
