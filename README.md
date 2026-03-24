@@ -14,7 +14,7 @@ Rather than focusing solely on rankings, the goal is to understand *where delay 
 
 
 
-The dataset provides flight‑level records including carrier, origin airport, timing, and arrival delay information. Keeping the scope to one month allowed for deeper exploratory analyst while still working with a large, production-scale dataset (~600k flights).
+The dataset provides flight‑level records including carrier, origin airport, timing, and arrival delay information. Keeping the scope to one month allowed for deeper exploratory analyst while still working with a large, production-scale dataset (\~600k flights).
 
 ## Tools
 
@@ -37,8 +37,8 @@ Key findings \& insights from EDA:
 
 * Just a **little over 20%** of total flights were delayed, suggesting that stories of constant delays are overblown
 * Flight delays follow a **right‑skewed (long‑tail) distribution** {p90 = 40 mins, p95 = 75, p99 = 192} --> so while rare, severe delays dominate averages
-* Delay variance between airline carriers was **moderate (~9% spread)** --> airline operations matter, but are not entirely influential to delay behavior
-* Delay variance between origin carriers was more prominent (~21% spread) --> this suggests that origin airport effects **explain more delay variability** than airline choice alone
+* Delay variance between airline carriers was **moderate (\~9% spread)** --> airline operations matter, but are not entirely influential to delay behavior
+* Delay variance between origin carriers was more prominent (\~21% spread) --> this suggests that origin airport effects **explain more delay variability** than airline choice alone
 * Composition analysis (airline x airport) showed that airline performance is **context‑dependent** and varies significantly by airport --> combinations provide more explanation rather than each single factor alone
 
 
@@ -58,6 +58,22 @@ Key SQL views include:
 * **Origin airport performance**
 * **Airline × airport interaction analysis**
 * **Decomposition view** (airline baseline performance x airport baseline delay environment x interaction effects between the two)
+
+
+
+### 3\. Data Visualization
+
+Tableau-created dashboard showcasing several key analysis views.
+
+
+
+Key visual takeaways include:
+
+
+
+* Airlines show meaningful delay differences relative to baseline.
+* Origin airports show larger variability than airlines.
+* Airline performance is context-depended by airport (interactions)
 
 
 
@@ -93,6 +109,5 @@ aviation-delays-analysis/
 
 
 
-* Build explanatory data visualizations from core SQL views
-* Translate analytical findings into clear, non‑technical insights
-* Finalize dashboards and documentation
+
+
