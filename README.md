@@ -20,8 +20,10 @@ The dataset provides flight‑level records including carrier, origin airport, t
 
 * Python - data cleaning and exploratory data analysis (EDA)
 * SQL (SQLite) - data modeling, aggregation, and analytical views
+* Tableau - interactive dashboards and visual analysis
 * Git/GitHub - version control and reproducibility
-* Data Visualization - planned (charts and dashboards)
+
+
 
 ## Analytical Approach
 
@@ -58,30 +60,46 @@ Key SQL views include:
 * **Origin airport performance**
 * **Airline × airport interaction analysis**
 * **Decomposition view** (airline baseline performance x airport baseline delay environment x interaction effects between the two)
+* Delay behavior by flight distance (short, medium, long haul), including variability and recovery metrics
 
 
 
 ### 3\. Data Visualization
 
-Tableau-created dashboard showcasing several key analysis views.
+Two Tableau dashboards were created to translate SQL insights into interpretable visuals.
 
 
 
-Key visual takeaways include:
+**Dashboard 1 — Airlines, Airports, and Interactions**
 
 
 
-* Airlines show meaningful delay differences relative to baseline.
-* Origin airports show larger variability than airlines.
-* Airline performance is context-depended by airport (interactions)
+* Airline‑level delay differences exist, but origin airports introduce more variability.
+* Airline performance is not portable across airports.
+* Simple “best” or “worst” airline labels break down once airport context is considered.
 
 
 
-## Key Questions Addressed So Far
+**Dashboard 2 — Delay Risk and Recovery by Distance**
+
+
+
+* Short‑, medium‑, and long‑haul flights exhibit nearly identical average arrival delays, even after excluding NYC airports.
+* This suggests airlines actively normalize average arrival performance through schedule design.
+* Differences emerge beneath the averages:
+
+  * Long‑haul flights recover delay more often and lose less time on average between departure and arrival.
+  * However, long‑haul flights exhibit greater volatility when disruptions occur.
+  * Short‑haul flights are more consistent but more fragile once delayed.
+  * 
+
+## Key Questions Addressed
 
 * What does the overall distribution of flight delays look like?
 * Are delays primarily driven by airlines or by airports?
 * How does the same airline perform differently across airports?
+* Why do average delay rates look similar across flight distances?
+* How do delay risk and recovery behavior differ once a flight is disrupted?
 
 
 
@@ -105,9 +123,18 @@ aviation-delays-analysis/
 
 
 
-## Next Steps
+## Project Status \& Next Steps
+
+The SQL pipeline and Tableau dashboards represent a completed v1 of this project. Future extensions could explore:
 
 
 
+* Weather impacts
+* Time‑of‑day effects
+* Delay propagation across aircraft rotations
+* Carrier‑specific scheduling strategies
 
+
+
+For now, the project serves as a completed case study in moving beyond averages to understand system behavior, variability, and operational risk.
 
