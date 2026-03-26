@@ -1,0 +1,4 @@
+trip_haul,flights_ex_nyc,avg_arr_delay_ex_nyc,std_arr_delay_ex_nyc,avg_recovery_ex_nyc,pct_recovered_ex_nyc,pct_worsened_ex_nyc
+Long,69476,14.3,52.03,-2.45,0.295,0.663
+Medium,284657,14.63,49.97,-3.56,0.272,0.689
+Short,189963,14.12,47.11,-4.13,0.252,0.713
