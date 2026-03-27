@@ -91,8 +91,7 @@ Two Tableau dashboards were created to translate SQL insights into interpretable
   * Long‑haul flights recover delay more often and lose less time on average between departure and arrival.
   * However, long‑haul flights exhibit greater volatility when disruptions occur.
   * Short‑haul flights are more consistent but more fragile once delayed.
-  * 
-
+    
 ## Key Questions Addressed
 
 * What does the overall distribution of flight delays look like?
